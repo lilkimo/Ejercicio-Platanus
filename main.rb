@@ -47,7 +47,9 @@ mercados.each do |mercado|
     end
 
     if montoMaximo != -1
-        espacios = ' ' * (12 - montoMaximo.to_s.length) # Los espacios restantes completar la cuadricula.
+        # Los espacios restantes completar la cuadricula.
+        espacios = ' ' * (12 - montoMaximo.to_s.length) if 12 - montoMaximo.to_s.length >= 0
+        
         puts "| #{mercado} | #{montoMaximo} #{mercado[0, 3]} #{espacios} |"
     else
         puts "| #{mercado} | Sin transacciones |"
